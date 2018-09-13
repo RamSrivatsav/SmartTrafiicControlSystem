@@ -1,0 +1,10 @@
+clc;
+newimagergb=imread('C:\Users\RAM SRIVATSAV\Desktop\Proj\ForeGround1.jpg');
+grayimage=rgb2gray(newimagergb);
+figure;
+imshow(grayimage);
+afternoise=imnoise(grayimage,'',0,0.025);
+figure;
+imshow(afternoise);
+afterwiener=wiener2(afternoise,[6 6]);
+figure;imshow(afterwiener);
